@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Frontend</title>
+</head>
+
+<body>
+
+<h1>Frontend Running</h1>
+
+<button onclick="callAPI()">Get Backend Data</button>
+
+<p id="output"></p>
+
+<script>
+
+async function callAPI() {
+
+let res =
+await fetch("http://localhost:5000");
+
+let data =
+await res.text();
+
+document.getElementById(
+"output"
+).innerText = data;
+
+}
+
+</script>
+
+</body>
+
+</html>
