@@ -2,34 +2,15 @@
 <html>
 
 <head>
-  <title>Frontend</title>
+  <title>Multi container application</title>
 </head>
 
 <body>
 
-<h1>Frontend Running</h1>
+<h1>Frontend Running successfully</h1>
 
-<button onclick="callAPI()">Get Backend Data</button>
+<p>This frontend container is running on AWS EC2 using Docker.</p>  
 
-<p id="output"></p>
-
-<script>
-
-async function callAPI() {
-
-let res =
-await fetch("http://localhost:5000");
-
-let data =
-await res.text();
-
-document.getElementById(
-"output"
-).innerText = data;
-
-}
-
-</script>
 
 </body>
 
