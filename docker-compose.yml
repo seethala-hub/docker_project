@@ -11,15 +11,21 @@ services:
     build: ./backend
     ports:
       - "5000:5000"
-      db:
-       image: mysql:8
-       environment:
-       MYSQL_ROOT_PASSWORD: root123O
-       volumes:
-       - mysql_data: /var/lib/mysql
-       volumes:
-       mysql_data:     
-       
-       
-=======
+    depends_on:
+      - db
 
+  db:
+    image: mysql:8
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: sampledb
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
